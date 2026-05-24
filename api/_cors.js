@@ -5,6 +5,7 @@ const ALLOWED_ORIGIN_PATTERNS = [
   /^https?:\/\/[a-z0-9-]+\.tauri\.localhost(:\d+)?$/i,
   /^tauri:\/\/localhost$/,
   /^asset:\/\/localhost$/,
+    /^https:\/\/investment-dashboard-cva\.pages\.dev$/,
   // Only allow bare localhost/127.0.0.1 in non-production (matches server/cors.ts)
   ...(process.env.NODE_ENV === 'production' ? [] : [
     /^https?:\/\/localhost(:\d+)?$/,
