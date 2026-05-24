@@ -12,9 +12,9 @@ function isDesktopOrigin(origin) {
 }
 
 function isValidEnterpriseKey(key) {
-  if (!key) return false;
   const validKeys = (process.env.WORLDMONITOR_VALID_KEYS || '').split(',').filter(Boolean);
-  if (validKeys.length === 0) return true; // self-hosted open mode: no keys configured → allow all
+  if (validKeys.length === 0) return true; // self-hosted open mode: any/no key passes when unconfigured
+  if (!key) return false;
   return validKeys.includes(key);
 }
 
